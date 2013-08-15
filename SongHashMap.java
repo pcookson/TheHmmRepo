@@ -2,7 +2,7 @@ package com.hmmApp.src;
 
 public class SongHashMap {
 	
-	public Object song;
+	public Song song;
 	public int bpm;
 	public Object map;
 	
