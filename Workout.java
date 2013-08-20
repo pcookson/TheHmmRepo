@@ -1,30 +1,40 @@
 package com.hmmApp.src;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Workout {
 	
-	private int bpm;
+	private int runningBpm;
 	private long time;
 	private Song currentSong;
-	private SongHashMap Songs;
+	private Map<String, Song> songMap;
 
 	public Workout(){
-
+		this.songMap = new HashMap<String, Song>();
+		start();
 	}
 
 	public void start(){
-
+		//checks to see if there is any songs saved to formatted txt file
+		//puts those songs into songMap
+		//get all songs from disk
+		//if song not in songMap then calls song.httpGetBpm
+		//then saves song information in formatted txt file
+		//
+		
 	}
 
 	public void end(){
 
 	}
 
-	public void setBpm(int bpm){
-		this.bpm = bpm;
+	public void setBpm(int runningBpm){
+		this.runningBpm = runningBpm;
 	}
 
 	public int getBpm(){
-		return bpm;	
+		return runningBpm;	
 	}
 	
 	public void setTime(long time){

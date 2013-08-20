@@ -15,13 +15,13 @@ public class Song {
 	private String genre;
 	private String title;
 	private int bpm;
-	
+
 
 	public Song(String artist, String genre, String title){
 		this.artist = artist;
 		this.genre = genre;
 		this.title = title;
-		
+
 	}
 
 	public String getArtist() {
@@ -99,6 +99,11 @@ public class Song {
 
 
 	public void genreGetBpm(){
+
+	}
+
+	public String toString(){
+		return getArtist() + "\t" + getTitle() + "\t" + getGenre() + "\t" + getBpm();
 
 	}
 }
