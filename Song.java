@@ -1,4 +1,4 @@
-package com.hmmApp.src;
+package com.example.appBackEnd;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,16 +12,65 @@ import java.util.Vector;
 public class Song {
 
 	private String artist;
-	private String genre;
 	private String title;
+	private int artistId;
+	private String albumName;
+	private int albumId;
+	private int songId;
+	private String songPath;
 	private int bpm;
 
 
-	public Song(String artist, String genre, String title){
+	public Song(String artist, int artistId, String albumName, int albumId, 
+			String title, int songId, String songPath){
 		this.artist = artist;
-		this.genre = genre;
+		this.artistId = artistId;
+		this.albumName = albumName;
+		this.albumId = albumId;
 		this.title = title;
+		this.songId = songId;
+		this.songPath = songPath;
+		this.bpm = httpGetBpm();
+	}
 
+	public int getArtistId() {
+		return artistId;
+	}
+
+	public void setArtistId(int artistId) {
+		this.artistId = artistId;
+	}
+
+	public String getAlbumName() {
+		return albumName;
+	}
+
+	public void setAlbumName(String albumName) {
+		this.albumName = albumName;
+	}
+
+	public int getAlbumId() {
+		return albumId;
+	}
+
+	public void setAlbumId(int albumId) {
+		this.albumId = albumId;
+	}
+
+	public int getSongId() {
+		return songId;
+	}
+
+	public void setSongId(int songId) {
+		this.songId = songId;
+	}
+
+	public String getSongPath() {
+		return songPath;
+	}
+
+	public void setSongPath(String songPath) {
+		this.songPath = songPath;
 	}
 
 	public String getArtist() {
@@ -32,13 +81,6 @@ public class Song {
 		this.artist = artist;
 	}
 
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
 
 	public String getTitle() {
 		return title;
@@ -56,7 +98,7 @@ public class Song {
 		this.bpm = bpm;
 	}
 
-	public int httpGetBpm(){
+	private int httpGetBpm(){
 		HttpURLConnection connection = null;
 		String artistName = artist.replaceAll(" ", "-");
 		String songName = title.replaceAll(" ", "-");
@@ -98,12 +140,14 @@ public class Song {
 	}
 
 
-	public void genreGetBpm(){
-
-	}
-
 	public String toString(){
-		return getArtist() + "\t" + getTitle() + "\t" + getGenre() + "\t" + getBpm();
-
+		StringBuilder songInformation = new StringBuilder();
+		String space = " ";
+		songInformation.append(getTitle());
+		songInformation.append(space);
+		songInformation.append(getArtist());
+		songInformation.append(space);
+		songInformation.append(getBpm());
+		return songInformation.toString();
 	}
 }
