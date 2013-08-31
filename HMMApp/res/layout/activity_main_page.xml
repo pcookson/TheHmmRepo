@@ -1,0 +1,450 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainPageActivity" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/startPage" >
+        
+        <ListView
+        android:id="@+id/listView_workouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:entries="@array/workoutsArray" >
+    	</ListView>
+    	
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/HillWorkoutInfoPage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+        
+        <LinearLayout
+            android:id="@+id/BackLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal">
+            
+            <ImageButton
+	        android:id="@+id/imageButton_Hillback"
+	        android:layout_width="50dp"
+	        android:layout_height="50dp"
+	        android:layout_centerHorizontal="true"
+	        android:background="@null"
+	        android:src="@drawable/back" />
+        </LinearLayout>
+
+        
+        <LinearLayout
+            android:id="@+id/HillFirstLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:layout_below="@id/BackLine">
+            
+            <TextView
+	        android:id="@+id/MinBPMTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Minimum BPM: "/>
+	        
+	        <EditText
+	        android:id="@+id/editText_minimumBPM"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:textSize="8pt"
+	        android:inputType="number" />
+            
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/HillSecondLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:layout_below="@id/HillFirstLine">
+	        
+            <TextView
+	        android:id="@+id/HillDurationTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Duration(min): "/>
+	        
+	        <EditText
+	        android:id="@+id/HilleditText_Duration"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:textSize="8pt"
+	        android:inputType="number" />
+	    </LinearLayout>
+	    
+        <LinearLayout
+            android:id="@+id/HillThirdLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="175px" 
+            android:orientation="horizontal"
+            android:layout_below="@id/HillSecondLine">
+	        
+            <TextView
+	        android:id="@+id/HillIntensityTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Intensity: "/>
+	        
+	        <RadioGroup
+		        android:id="@+id/HillRadioIntensity"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+		 
+		        <RadioButton
+		            android:id="@+id/radioLow"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Low" 
+		            android:checked="true" />
+		 
+		        <RadioButton
+		            android:id="@+id/radioMedium"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Medium" />
+		        <RadioButton
+		            android:id="@+id/radioHigh"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="High" />
+		 
+		    </RadioGroup>
+	    </LinearLayout>
+	    
+	    <Button
+        android:id="@+id/btnStartHillWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/HillThirdLine"
+        android:text="Start!" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/SteadyWorkoutInfoPage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+	    
+        <LinearLayout
+            android:id="@+id/BackLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal">
+            
+            <ImageButton
+	        android:id="@+id/imageButton_Steadyback"
+	        android:layout_width="50dp"
+	        android:layout_height="50dp"
+	        android:layout_centerHorizontal="true"
+	        android:background="@null"
+	        android:src="@drawable/back" />
+        </LinearLayout>
+	    
+        <LinearLayout
+            android:id="@+id/SteadyFirstLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:layout_below="@id/BackLine">
+            
+            <TextView
+	        android:id="@+id/SteadyBPMTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="BPM: "/>
+	        
+	        <EditText
+	        android:id="@+id/SteadyeditText_BPM"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:textSize="8pt"
+	        android:inputType="number" />
+            
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/SteadySecondLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:layout_below="@id/SteadyFirstLine">
+	        
+            <TextView
+	        android:id="@+id/SteadyDurationTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Duration(min): "/>
+	        
+	        <EditText
+	        android:id="@+id/SteadyEditText_Duration"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:textSize="8pt"
+	        android:inputType="number" />
+	    </LinearLayout>
+	    
+	    <Button
+        android:id="@+id/btnStartSteadyWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/SteadySecondLine"
+        android:text="Start!" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/RandomWorkoutInfoPage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+	    
+        <LinearLayout
+            android:id="@+id/BackLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal">
+            
+            <ImageButton
+	        android:id="@+id/imageButton_Randomback"
+	        android:layout_width="50dp"
+	        android:layout_height="50dp"
+	        android:layout_centerHorizontal="true"
+	        android:background="@null"
+	        android:src="@drawable/back" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/RandomFirstLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:layout_below="@id/BackLine">
+	        
+            <TextView
+	        android:id="@+id/RandomDurationTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Duration(min): "/>
+	        
+	        <EditText
+	        android:id="@+id/RandomEditText_Duration"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:textSize="8pt"
+	        android:inputType="number" />
+	    </LinearLayout>
+	    
+	    <Button
+        android:id="@+id/btnStartRandomWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/RandomFirstLine"
+        android:text="Start!" />
+        
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/WorkoutPage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+	    
+        <LinearLayout
+            android:id="@+id/WorkoutFirstLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:gravity="center"
+            android:orientation="horizontal">
+	        
+            <TextView
+	        android:id="@+id/SongTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Song Name"/>
+            
+	    </LinearLayout>
+	    
+        <LinearLayout
+            android:id="@+id/WorkoutSecondLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/WorkoutFirstLine">
+	        
+            <TextView
+	        android:id="@+id/ArtistTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Song Artist"/>
+            
+	    </LinearLayout>
+	    
+        <LinearLayout
+            android:id="@+id/WorkoutThirdLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/WorkoutSecondLine">
+	        
+            <TextView
+	        android:id="@+id/BPMTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="BPM"/>
+            
+	    </LinearLayout>
+	    
+        <LinearLayout
+            android:id="@+id/WorkoutFourthLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/WorkoutThirdLine"
+            android:layout_marginBottom = "30dp">
+	        
+            <TextView
+	        android:id="@+id/TimerTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"/>
+            
+	    </LinearLayout>
+        
+	    <LinearLayout
+            android:id="@+id/WorkoutFifthLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="80px" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/WorkoutFourthLine">
+            
+	        <ImageButton
+	        android:id="@+id/imageButton_previous"
+	        android:layout_width="50dp"
+	        android:layout_height="80dp"
+	        android:layout_centerHorizontal="true"
+	        android:background="@null"
+	        android:src="@drawable/previous" />
+	        <ImageButton
+	        android:id="@+id/imageButton_playpause"
+	        android:layout_width="50dp"
+	        android:layout_height="80dp"
+	        android:layout_centerHorizontal="true"
+	        android:background="@null"
+	        android:src="@drawable/pause" />
+	        <ImageButton
+	        android:id="@+id/imageButton_next"
+	        android:layout_width="50dp"
+	        android:layout_height="80dp"
+	        android:layout_centerHorizontal="true"
+	        android:background="@null"
+	        android:src="@drawable/next" />
+	    </LinearLayout>
+	    
+	    <LinearLayout
+            android:id="@+id/WorkoutPadding" 
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/WorkoutFifthLine"
+            android:layout_marginBottom = "20dp">
+            
+	    </LinearLayout>
+	    
+	    <LinearLayout
+            android:id="@+id/WorkoutSixthLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/WorkoutPadding"
+            android:layout_marginBottom = "30dp">
+	        
+            <Button
+	        android:id="@+id/btnEndWorkout"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:text="END WORKOUT" />
+            
+	    </LinearLayout>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/ResultsPage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+	    
+        <LinearLayout
+            android:id="@+id/ResultsLine"
+            android:layout_width="fill_parent" 
+            android:layout_height="56px" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom = "30dp">
+            
+            <TextView
+	        android:id="@+id/ResultsTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:textSize="8pt"
+			android:text="Show workout results here"/>            
+	    </LinearLayout>
+        
+        <Button
+	        android:id="@+id/btnHome"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:text="Home"
+	        android:layout_below="@id/ResultsLine"/>
+	   
+        
+    </RelativeLayout>
+    
+    
+    
+    
+    
+</RelativeLayout>
